@@ -1,6 +1,6 @@
-# gnimargorP tpircS
+# Script Programming The
 ## Introdução
-A Linguagem MetroScript foi desenvolvida com o objetivo de facilitar a criação e execução de rotas e instruções para trens de metro. Ela oferece uma sintaxe simples e intuitiva, permitindo que usuarios definam trens, suas rotas, suas paradas e outras aplicações como velocidade e rotação de rodas para os trens.
+A Script Programming The, ou The Programing Script invertido tem como principal objetivo dificultar a vida de qualquer programador experiente ou inexperiente na sua jornada de desenvolvimento de código. Essa linguagem requer que o programador tenha paciencia e calma em pensar no codigo, pois a primeira linha vai ser sempre reservada para o que normalmente seria a última! Como eu sempre digo: A melhor forma de progredir é sonhar no que voce pode conquistar...e agora voce pode fazer isso de forma prática! Começando (eu acho) com o seu Print! Então com forma de dar um gostinho do que vem por vir: !game the hate, player the hate dont.
 
 ## Desenvolvedor
 Caroline Chaim de Lima Carneiro
