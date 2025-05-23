@@ -19,47 +19,10 @@ exemplo4.m
 ## EBNF
 
 ``` lua
-BLOCK = '{' , STATEMENT , '}';
+STATEMENT = (|DECLARATION|("infuse","iden","with",BEXP)|("reveal","{",BEXP,"}")|
+("ward","if",BEXP,":","\n",STATEMENT,["diverge",":","\n",STATEMENT])),".","\n";
 
-STATEMENT = ";" | ASSIGMENT | PRINT | IF | WHILE | START | STOP | FINISH;
-
-ASSIGNMENT = IDENTIFIER,( CREATE | SET);
-
-CREATE = "=>", TYPE, ["=", (RELEXP | MATH_FUNC)], ";";
-
-SET = "=", (RELEXP | MATH_FUNC),";";
-
-PRINT = 'printLog','(',RELEXP,')';
-
-WHILE = "while","(", RELEXP,")",BLOCK, ";";
-
-IF = "if","(", RELEXP,")",BLOCK,["else",BLOCK], ";";
-
-MATH_FUNC = MATHFUNC_N, "(", RELEXP, ")", ";";
-
-MATH_FUNC_N = "sqrt" |"sin" | "cos" | "tan"| "log" | "exp" | "pow" | "pi";
-
-START = "START","(","id",":", IDENTIFIER , "," , "station", ":" , IDENTIFIER , ",", "region" , IDENTIFIER, ")",";";
-
-STOP = "STOP" , "(","name", ":" , IDENTIFIER, ",", "speed", ":", NUMBER, "," , "rotation", ":", NUMBER,")",";";
-
-FINISH= "FINISH","(","id",":", IDENTIFIER , "," , "station", ":" , IDENTIFIER , ",", "region" , IDENTIFIER, ")",";";
-
-RELEXPR = EXPRESSION, { ("==" | ">" | "<"), EXPRESSION };
-
-EXPRESSION = TERM, { ("+" | "-" | "||" | "."), TERM };
-
-TERM = FACTOR, { ("*" | "/" | "&&"), FACTOR };
-
-FACTOR = (("+" | "-" | "!"), FACTOR) | NUMBER | STRING | "(", RELEXPR, ")" | IDENTIFIER, ["(", RELEXPR, {",", RELEXPR} ,")"] | ("READLN", "(", ")");
-
-IDENTIFIER = LETTER, { LETTER | DIGIT | "_" };
-
-NUMBER = DIGIT, { DIGIT };
-
-LETTER = ( a | ... | z | A | ... | Z );
-
-DIGIT = ( 1* | 2* | 3* | 4* | 5* | 6* | 7* | 8* | 9* | 0* );
+DECLARATION =  'summon',('sorcery'|'instant'|'artifact'),'iden','as', BEXP;
 
 ```
 
