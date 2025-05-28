@@ -1,6 +1,7 @@
 # Spell Lang
 ## Introdução
-A Script Programming The, ou The Programing Script invertido tem como principal objetivo dificultar a vida de qualquer programador experiente ou inexperiente na sua jornada de desenvolvimento de código. Essa linguagem requer que o programador tenha paciencia e calma em pensar no codigo, pois a primeira linha vai ser sempre reservada para o que normalmente seria a última! Como eu sempre digo: A melhor forma de progredir é sonhar no que voce pode conquistar...e agora voce pode fazer isso de forma prática! Começando (eu acho) com o seu Print! Então com forma de dar um gostinho do que vem por vir: !game the hate, player the hate dont.
+A Spell lang tem como principal objetivo a ajudar pequenos aprendizes de magia a corretamente organizar suas magias para o proximo combate magico. Com o spell lang, aprendizes podem aprender de forma simplificada a logica da magia, e fazer o manegamento correto de feiticos, pocoes, transmutacoes e maldicoes com base na quantidade de mana, aftefatos e ingredientes a sua disposicao. Antes de colocar tudo em pratica, esses alunos tem a oportunidade de programar o seu proximo ataque ou feitico, garantindo sucesso na sua proxima empreentada.
+
 
 ## Desenvolvedor
 Caroline Chaim de Lima Carneiro
