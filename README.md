@@ -1,4 +1,4 @@
-# Script Programming The
+# Spell Lang
 ## Introdução
 A Script Programming The, ou The Programing Script invertido tem como principal objetivo dificultar a vida de qualquer programador experiente ou inexperiente na sua jornada de desenvolvimento de código. Essa linguagem requer que o programador tenha paciencia e calma em pensar no codigo, pois a primeira linha vai ser sempre reservada para o que normalmente seria a última! Como eu sempre digo: A melhor forma de progredir é sonhar no que voce pode conquistar...e agora voce pode fazer isso de forma prática! Começando (eu acho) com o seu Print! Então com forma de dar um gostinho do que vem por vir: !game the hate, player the hate dont.
 
@@ -26,94 +26,60 @@ DECLARATION =  'summon',('sorcery'|'instant'|'artifact'),'iden','as', BEXP;
 
 ```
 
-## Exemplo 1: Definindo rota
+## Exemplo 1: Definindo Variaveis
+O seguinte exemplo monstra como corretanente definir as variaveis e como que tipar os valores correspondentes a que seria "strings", "int" e "booleanos". Tambem demonstra como fazer de forma correta a atribuicao de novos valores a variaveis ja pre definidas.
 
-O seguinte exemplo demonstra como usar a linguagem para definir uma rota com tres paradas. A rota comeca o lugar que o trem estiver estacionado pela noite anterior e passar pelas paradas 1,2,3 e termina no lugar onde ele vai parar pelo dia. Note que neste exemplo o trem passa pelas estacoes sem parar, e no final faz sua parada na estacao do hospital depois de concluir o seu percurso de novo na estacao Santa Rosa.
+``` 
+summon sorcery mana as 5. 
+summon instant spell as "expeliamus".
+summon artifact clock as True.
 
-``` lua
+summon sorcery poison.
+summon instant potion.
 
-{
-START (id : "abc_123", station : "Santa Rosa", region : "Norte");
+channel 7 to poison.
+channel "recovery" to potion.
 
-STOP (name : "Pinheiros", speed: 50, rotation: 100);
-STOP (name : "Parque", speed : 20, rotation : 50);
-STOP (name : "Hospital", speed : 0, rotation : 0);
+summon sorcery infection as mana drined poison. # infection = mana - poison
+summon instant blink as spell infused potion. # blink = spell + potion
 
-FINISH (id :  "abc_123", station : "Santa Rosa", region : "Norte); 
-}
-```
-
-## Exemplo 2: Mudando a velocidade 
-O seguinte exemplo demonstra como que o programa captura a mudanca de velocidade ao passar em um ponto, ou de um ponto a outro. E importante ressaltar que a velocidade vai estar sempre em km/h.
-
-``` lua
-{
-float => init_speed = 0.0;
-float => target_speed = 50.0;
-float => time = 0.0;
-float => aceletation = 3.5;
-
-float => time_to_reach_target_speed = (target_speed - init_speed) / aceletation;
-
-START (id : "abc_123", station : "Santa Rosa", region : "Norte");
-
-while (time < time_to_reach_target_speed ) {
-    init_speed = init_speed + aceletation;
-    time = time + 1.0;
-    STOP (name : "GOING TO Pinheiros", speed: init_speed, rotation: 100);
-}
-
-STOP (name : "Pinheiros", speed: init_speed, rotation: 100);
-
-}
-```
-
-## Exemplo 3: Alterando a rotação da roda
-O seguinte exemplo demonstra como que o programa consegue alterar a velocidade da rotacao da roda dependendo do seu diametro. E como essa rotacao influencia na velocidade do trem dentro de um trecho do percurso.
-
-``` lua
-{
-
-float => diameter;
-float => radius;
-float => circumferance;
-int => km = 1;
-float => rpm;
-
-
-diameter = 4.0;
-radius = diameter * 2.0;
-circumferance = pi() * diameter;
-
-float => init_speed = 0.0;
-float => target_speed = 50.0;
-float => time = 0.0;
-float => aceletation = 3.5;
-float => time_to_reach_target_speed = (target_speed - init_speed) / aceletation;
-
-
-START (id : "abc_123", station : "Santa Rosa", region : "Norte");
-while (time < time_to_reach_target_speed ) {
-
-    init_speed = init_speed + aceletation;
-    time = time + 1.0;
-    rpm = init_speed * 60.0 / circumferance;
-    STOP (name : "GOING TO Pinheiros", speed: init_speed, rotation: rpm);
-    }
-}
+channel clock as False.
+ 
 
 ```
 
-## Exemplo 4: Fazendo uso dos simbolos matematicos
-``` lua
-{
-printlog(sqrt(2.0));
-printlog(sin(90));
-printlog(cos(60));
-printlog(tan(45));
-printlog(log(1.3));
-printlog(exp(5));
-printlog(pi());
-}
+## Exemplo 2: Condicionais
+O seguinte exemplo demonstra como que o programa trabalha com condicionais.
+
+``` 
+ward if mana greater than 5:
+    reveal "mana is strong".
+divert:
+    reveal "mana is weak"
+
+ward if clock:
+    reveal clock.
+
+    ward if clock is True:
+        reveal "clock is True".
+        channel False to clock.
 
 ```
+
+## Exemplo 3: Loops
+O seguinte exemplo demonstra como que o programa trabalha com loops:
+``` 
+chant until mana is 0:
+    reveal mana.
+    channel mana drained 1 to mana.
+
+chant until clock:
+    reveal clock.
+    ward if mana is equal to 2:
+        channel False to clock.
+    divert:
+        channel 2 to mana.
+
+```
+
+
