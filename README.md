@@ -1,4 +1,4 @@
-# Spell Lang
+# Spell Lang 🧙‍♂️🪄
 ## Introdução
 A Spell lang tem como principal objetivo a ajudar pequenos aprendizes de magia a corretamente organizar suas magias para o proximo combate magico. Com o spell lang, aprendizes podem aprender de forma simplificada a logica da magia, e fazer o manegamento correto de feiticos, pocoes, transmutacoes e maldicoes com base na quantidade de mana, aftefatos e ingredientes a sua disposicao. Antes de colocar tudo em pratica, esses alunos tem a oportunidade de programar o seu proximo ataque ou feitico, garantindo sucesso na sua proxima empreentada.
 
