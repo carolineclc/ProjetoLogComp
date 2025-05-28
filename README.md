@@ -30,20 +30,20 @@ DECLARATION =  'summon',('sorcery'|'instant'|'artifact'),'iden','as', BEXP;
 O seguinte exemplo monstra como corretanente definir as variaveis e como que tipar os valores correspondentes a que seria "strings", "int" e "booleanos". Tambem demonstra como fazer de forma correta a atribuicao de novos valores a variaveis ja pre definidas.
 
 ``` 
-summon sorcery mana as 5. 
-summon instant spell as "expeliamus".
-summon artifact clock as True.
+summon sorcery mana as 5. # Atribuindo o valor 5 a variavel mana
+summon instant spell as "expeliamus". # Atribuindo um valor tipo string para a variavel spell
+summon artifact clock as True. #Atribuindo um booleano a variavel clock
 
-summon sorcery poison.
-summon instant potion.
+summon sorcery poison. # Atribuindo a tipagem sorcery para a variavel poison
+summon instant potion. # Atribuindo a tipagem instant para a variavel potion
 
-channel 7 to poison.
-channel "recovery" to potion.
+channel 7 to poison. # Atribuindo o valor 7 a variavel poision
+channel "recovery" to potion. # Atribuindo a vatiavel "recovery" para a variavel potion
 
 summon sorcery infection as mana drined poison. # infection = mana - poison
 summon instant blink as spell infused potion. # blink = spell + potion
 
-channel clock as False.
+channel clock as False. # Atribuindo o valor Faslse a variavel clock
  
 
 ```
@@ -51,9 +51,12 @@ channel clock as False.
 ## Exemplo 2: Condicionais
 O seguinte exemplo demonstra como que o programa trabalha com condicionais.
 
-``` 
-ward if mana greater than 5:
-    reveal "mana is strong".
+```
+summon mana as sorcery.
+channel calling() to mana. # aqui um valor externo vai ser atribuido para a variavel mana.
+
+ward if mana greater than 5: 
+    reveal "mana is strong". 
 divert:
     reveal "mana is weak"
 
@@ -81,5 +84,7 @@ chant until clock:
         channel 2 to mana.
 
 ```
+
+
 
 
