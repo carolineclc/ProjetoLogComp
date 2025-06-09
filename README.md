@@ -31,20 +31,20 @@ DECLARATION =  'summon',('sorcery'|'instant'|'artifact'),'iden','as', BEXP;
 O seguinte exemplo monstra como corretanente definir as variaveis e como que tipar os valores correspondentes a que seria "strings", "int" e "booleanos". Tambem demonstra como fazer de forma correta a atribuicao de novos valores a variaveis ja pre definidas.
 
 ``` 
-summon sorcery mana as 5. # Atribuindo o valor 5 a variavel mana
-summon instant spell as "expeliamus". # Atribuindo um valor tipo string para a variavel spell
-summon artifact clock as True. #Atribuindo um booleano a variavel clock
+SUMMON sorcery mana as 5. # Atribuindo o valor 5 a variavel mana
+SUMMON instant spell as "expeliamus". # Atribuindo um valor tipo string para a variavel spell
+SUMMON artifact clock as True. #Atribuindo um booleano a variavel clock
 
-summon sorcery poison. # Atribuindo a tipagem sorcery para a variavel poison
-summon instant potion. # Atribuindo a tipagem instant para a variavel potion
+SUMMON sorcery poison. # Atribuindo a tipagem sorcery para a variavel poison
+SUMMON instant potion. # Atribuindo a tipagem instant para a variavel potion
 
-channel 7 to poison. # Atribuindo o valor 7 a variavel poision
-channel "recovery" to potion. # Atribuindo a vatiavel "recovery" para a variavel potion
+CHANNEL 7 to poison. # Atribuindo o valor 7 a variavel poision
+CHANNEL "recovery" to potion. # Atribuindo a vatiavel "recovery" para a variavel potion
 
-summon sorcery infection as mana drined poison. # infection = mana - poison
-summon instant blink as spell infused potion. # blink = spell + potion
+SUMMON sorcery infection as mana drined poison. # infection = mana - poison
+SUMMON instant blink as spell infused potion. # blink = spell + potion
 
-channel clock as False. # Atribuindo o valor Faslse a variavel clock
+CHANNEL clock as False. # Atribuindo o valor Faslse a variavel clock
  
 
 ```
@@ -53,36 +53,36 @@ channel clock as False. # Atribuindo o valor Faslse a variavel clock
 O seguinte exemplo demonstra como que o programa trabalha com condicionais.
 
 ```
-summon mana as sorcery.
-channel calling() to mana. # aqui um valor externo vai ser atribuido para a variavel mana.
+SUMMON mana as sorcery.
+CHANNEL calling() to mana. # aqui um valor externo vai ser atribuido para a variavel mana.
 
-ward if mana greater than 5: 
-    reveal "mana is strong". 
+WARD if mana greater than 5: 
+reveal "mana is strong". 
 divert:
-    reveal "mana is weak"
+reveal "mana is weak"
 
-ward if clock:
-    reveal clock.
-
-    ward if clock is True:
-        reveal "clock is True".
-        channel False to clock.
+WARD if clock:
+reveal clock.
+-WARD if clock is True:
+REVEAL "clock is True".
+CHANNEL False to clock.
 
 ```
 
 ## Exemplo 3: Loops
 O seguinte exemplo demonstra como que o programa trabalha com loops:
 ``` 
-chant until mana is 0:
-    reveal mana.
-    channel mana drained 1 to mana.
+CHANT until mana is 0:
+reveal mana.
+channel mana drained 1 to mana.
 
-chant until clock:
-    reveal clock.
-    ward if mana is equal to 2:
-        channel False to clock.
-    divert:
-        channel 2 to mana.
+CHANT until clock:
+reveal clock.
+
+WARD if mana is equal to 2:
+CHANNEL False to clock.
+DIVERT:
+channel 2 to mana.
 
 ```
 
