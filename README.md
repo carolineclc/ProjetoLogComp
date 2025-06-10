@@ -7,17 +7,7 @@ A Linguagem MetroScript foi desenvolvida com o objetivo de facilitar a criação
 ## Desenvolvedor
 Caroline Chaim de Lima Carneiro
 
-## Como executar
-python main.py [arquivos de teste]
 
-### Arquivo de teste
-exemplo1.m
-
-exemplo2.m
-
-exemplo3.m
-
-exemplo4.m
 ## EBNF
 
 ``` lua
