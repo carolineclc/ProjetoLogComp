@@ -1,4 +1,5 @@
-# MetroScript
+# MetroScript Atualizado
+
 
 ## Introdução
 A Linguagem MetroScript foi desenvolvida com o objetivo de facilitar a criação e execução de rotas e instruções para trens de metro. Ela oferece uma sintaxe simples e intuitiva, permitindo que usuarios definam trens, suas rotas, suas paradas e outras aplicações como velocidade e rotação de rodas para os trens.
@@ -81,6 +82,36 @@ FINISH (id :  "abc_123", station : "Santa Rosa", region : "Norte);
 }
 ```
 
+### OUTPUT
+
+```
+------------- Starting track ----------------
+ - Train ID: abc_123
+ - Station: Santa Rosa
+ - Region: Norte
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: Pinheiros
+ - TRAIN SPEED: 50
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: Parque
+ - TRAIN SPEED: 20
+ - WHEEL ROTATION: 50
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: Hospital
+ - TRAIN SPEED: 0
+ - WHEEL ROTATION: 0
+---------------------------------------------  
+------------- FINISHING track ---------------- 
+ - Train ID: abc_123
+ - Station: Santa Rosa
+ - Region: Norte
+--------------------------------------------- 
+```
+
 ## Exemplo 2: Mudando a velocidade 
 O seguinte exemplo demonstra como que o programa captura a mudanca de velocidade ao passar em um ponto, ou de um ponto a outro. E importante ressaltar que a velocidade vai estar sempre em km/h.
 
@@ -104,6 +135,91 @@ while (time < time_to_reach_target_speed ) {
 STOP (name : "Pinheiros", speed: init_speed, rotation: 100);
 
 }
+```
+
+### OUTPUT
+```
+------------- Starting track ----------------
+ - Train ID: abc_123
+ - Station: Santa Rosa
+ - Region: Norte
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 3.5
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 7.0
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 10.5
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 14.0
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 17.5
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 21.0
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 24.5
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 28.0
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 31.5
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 35.0
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 38.5
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 42.0
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 45.5
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 49.0
+ - WHEEL ROTATION: 100
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: Pinheiros
+ - TRAIN SPEED: 49.0
+ - WHEEL ROTATION: 100
+---------------------------------------------
+
 ```
 
 ## Exemplo 3: Alterando a rotação da roda
@@ -142,6 +258,85 @@ while (time < time_to_reach_target_speed ) {
 
 ```
 
+### OUTPUT
+```
+------------- Starting track ----------------
+ - Train ID: abc_123
+ - Station: Santa Rosa
+ - Region: Norte
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 3.5
+ - WHEEL ROTATION: 16.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 7.0
+ - WHEEL ROTATION: 33.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 10.5
+ - WHEEL ROTATION: 50.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 14.0
+ - WHEEL ROTATION: 66.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 17.5
+ - WHEEL ROTATION: 83.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 21.0
+ - WHEEL ROTATION: 100.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 24.5
+ - WHEEL ROTATION: 116.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 28.0
+ - WHEEL ROTATION: 133.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 31.5
+ - WHEEL ROTATION: 150.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 35.0
+ - WHEEL ROTATION: 167.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 38.5
+ - WHEEL ROTATION: 183.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 42.0
+ - WHEEL ROTATION: 200.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 45.5
+ - WHEEL ROTATION: 217.0
+---------------------------------------------  
+------------- STOPPING track ----------------  
+ - STATION NAME: GOING TO Pinheiros
+ - TRAIN SPEED: 49.0
+ - WHEEL ROTATION: 233.0
+---------------------------------------------
+```
+
 ## Exemplo 4: Fazendo uso dos simbolos matematicos
 ``` lua
 {
@@ -154,4 +349,15 @@ printlog(exp(5));
 printlog(pi());
 }
 
+```
+
+### OUTPUT
+```
+1.4142135623730951
+0.8939966636005579
+-0.9524129804151563
+1.6197751905438615
+0.26236426446749106
+148.4131591025766
+3.141592653589793
 ```
