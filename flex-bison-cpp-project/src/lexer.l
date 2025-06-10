@@ -2,7 +2,7 @@
 %option c++
 
 %{
-#include "parser.tab.h"
+#include "parser.y"
 #include <cstring>
 #include <cstdlib>
 %}
@@ -37,9 +37,19 @@
 "region"        { return REGION; }
 "rotation"      { return ROTATION; }
 
-[0-9]+"."[0-9]+ { yylval.floatValue = atof(yytext); return FLOAT; }
-[0-9]+          { yylval.intValue = atoi(yytext); return INT; }
-\"([^\\\"]|\\.)*\" { yylval.strValue = strdup(yytext); return STRING; }
+[0-9]+"."[0-9]+ {
+    yylval.floatval = atof(yytext);
+    return FLOAT;
+}
+[0-9]+ {
+    yylval.intval = atoi(yytext);
+    return INT;
+}
+\"([^\\\"]|\\.)*\" {
+    yylval.strval = strdup(yytext + 1); // remove quotes
+    yylval.strval[strlen(yylval.strval) - 1] = '\0';
+    return STRING;
+}
 
 "=="            { return EQUAL; }
 "=>"            { return ARROW; }
@@ -61,7 +71,10 @@
 ":"             { return C; }
 ","             { return COMMA; }
 
-[a-zA-Z_][a-zA-Z0-9_]* { yylval.strValue = strdup(yytext); return IDENTIFIER; }
+[a-zA-Z_][a-zA-Z0-9_]* {
+    yylval.strval = strdup(yytext);
+    return IDENTIFIER;
+}
 
 [ \t\r\n]+      { /* skip whitespace */ }
 "/*"([^*]|\*+[^*/])*\*+ "/" { /* skip block comments */ }

@@ -1,8 +1,8 @@
 #include <iostream>
-#include "lexer.h"
-#include "parser.h"
+#include "ast.h" 
+#include "parser.tab.h"
 
-extern "C" int yyparse();
+
 extern FILE *yyin;
 
 int main(int argc, char **argv) {
